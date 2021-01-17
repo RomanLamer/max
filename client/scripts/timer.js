@@ -1,5 +1,6 @@
 const time = document.getElementById('timer');
-let myTime = '3:00:00' 
+let myTime = '00:30:00' 
+document.getElementById('timer').innerText = myTime;
 function myTimer(){
     let isEnd = false;
     let h = parseInt(myTime.split(":")[0]);
@@ -8,7 +9,20 @@ function myTimer(){
     if (s-1<0) {
         if (m-1<0) {
             if (h-1<0) {
-                isEnd = true;
+                let ans = []
+                let index = 0;
+                document.querySelectorAll('input[type="radio"]').forEach(el=>{
+                    let testAns = el.checked?el:null;
+                    if (testAns) {
+                        index++
+                        testAns = testAns.closest('label').innerText.trim();
+                        ans.push({answer:testAns,id:index})
+                    }
+                });
+                clearInterval(timer);
+                document.body.removeChild(document.getElementById('root'));
+                document.querySelector('.cap').classList.remove('none');
+                document.getElementById('timer').innerHTML = "completed"
             }else{
                 h=h-1;
                 m=59;
@@ -16,6 +30,7 @@ function myTimer(){
             }
         }else{
             m=m-1
+            s=59;
         }
     }else{s=s-1}
     isEnd?clearInterval(timer):null;
