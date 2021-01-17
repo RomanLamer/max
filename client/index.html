@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header__counters">
+            Q
+            <div id="current_page">1</div>
+            of
+            <div id="page_quantity">78</div>
+        </div>
+        <div class="header__content">
+            <div class="header__text">02 - Working with Java Data Types:Foundation</div>
+            <div class="header__delimiter">
+                |
+            </div>
+            <div class="header__timer">
+                Time left: <i id="timer">null</i>
+            </div>
+        </div>
+    </div>
+    <section id="root"></section>
+    <div class="controls">
+        <div class="controls__previous" id="previous">
+            <ion-icon style="font-size: 20px;" name="caret-back-outline"></ion-icon>previous
+        </div>
+        <div class="controls__next" id="next">
+            <ion-icon style="font-size: 20px;" name="caret-forward-outline"></ion-icon>next
+        </div>
+        <div class="controls__pause" id="pause" data-pause="0">
+            <ion-icon style="font-size: 20px;" name="pause-outline"></ion-icon>pause
+        </div>
+        <div class="controls__stop" id="stop">
+            <ion-icon style="margin: 5px;font-size: 15px;" class="icon" name="square-outline"></ion-icon>stop
+        </div>
+    </div>
+    <script src="./scripts/controls.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/timer.js"></script>
+</body>
+
+</html>
