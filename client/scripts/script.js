@@ -1,4 +1,4 @@
-function template(header,answerCount,answers,isHide,index){
+function template(header,answerCount,answers,index){
     let answersHTML = ``;
     for(let i = 0;i < answerCount;i++){
         answersHTML+=`<div class="question__answers--item">
@@ -8,7 +8,7 @@ function template(header,answerCount,answers,isHide,index){
         </label>
     </div>`
     }
-    return `<div class="question ${isHide?"none":''}">
+    return `<div class="question">
         <h1 class="question__header">${header}</h1>
         <p class="question__underheader">Please select 1 option</p>
         <div class="question__answers">
@@ -21,9 +21,8 @@ window.addEventListener('load',async ()=>{
     const data = await (await fetch('getData')).json();
     if (data) {
     const answers = data.answers.length;
-    document.getElementById('page_quantity').innerHTML = answers;
     for(let i = 0;i < answers;i++){
-        document.getElementById('root').innerHTML+=template(data.answers[i].questionId,data.answers[i].answers.length,data.answers[i].answers,i>0?true:false,i);
+        document.getElementById('root').innerHTML+=template(data.answers[i].questionId,data.answers[i].answers.length,data.answers[i].answers,i);
     }
 }        
 })

@@ -67,14 +67,6 @@ body{
 .header__counters > div{
     display: inline-block;
 }
-.header__counters > div#current_page{
-    -webkit-box-shadow: inset 0px 0px 4px 0px #000000; 
-    box-shadow: inset 0px 0px 4px 0px #000000;
-    background-color: #ffffff;
-    color: #000000;
-    margin: 0 10px;
-    padding: 1px 5px;
-}
 .header__timer{
     position: absolute;
     display: flex;
@@ -84,9 +76,9 @@ body{
     bottom: 0;
 }
 .header__content{
-    width: 50%;
+    width: 75%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 .header__text{
     display: flex;
@@ -118,7 +110,7 @@ body{
     width: 92%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .question__answers--item{
     font-size: 1.2vw;
@@ -142,16 +134,10 @@ body{
     text-transform: uppercase;
     cursor: pointer;
 }
-.controls__previous{
-    background-color: lightblue;
-}
-.controls__next{
+.controls__submit{
     background-color: green;
 }
-.controls__pause{
-    background-color: orange;
-}
-.controls__stop{
+.controls__cancel{
     background-color: red;
 }
 .radio{

@@ -41,14 +41,3 @@ function myTimer(){
     time.innerHTML = myTime;
 }
 let timer = setInterval(myTimer,1000)
-document.getElementById('pause').addEventListener('click',()=>{
-    if (parseInt(document.getElementById('pause').dataset.pause) === 0) {
-        clearInterval(timer);
-        document.getElementById('pause').innerHTML = `<ion-icon name="caret-forward-outline"></ion-icon>continue`;
-        document.getElementById('pause').dataset.pause = '1';
-    }else{
-        timer = setInterval(myTimer,1000);
-        document.getElementById('pause').innerHTML = `<ion-icon style="font-size: 20px;" name="pause-outline" data-pause="0"></ion-icon>pause`;
-        document.getElementById('pause').dataset.pause = '0';
-    }
-})
