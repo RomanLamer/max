@@ -105,9 +105,7 @@ body{
     background-color: black;
 }
 .controls{
-    position: absolute;
-    top: 90%;
-    width: 92%;
+    margin: 7vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
