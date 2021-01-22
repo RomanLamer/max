@@ -14,7 +14,6 @@ app.listen(PORT,()=>{
 })
 
 app.get('/getData',(req,res)=>{
-    // console.log(JSON.parse(fs.readFileSync(path.resolve(__dirname,'client',"data.json"))))
     res.end(fs.readFileSync(path.resolve(__dirname,'client',"data.json")))
 })
 

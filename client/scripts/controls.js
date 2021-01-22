@@ -28,9 +28,15 @@ document.getElementById('submit').addEventListener('click',()=>{
             ans.push({answer:testAns,id:index})
         }
     });
-    clearInterval(timer);
-    document.getElementById('timer').innerHTML = "completed"
-    document.body.removeChild(document.getElementById('root'));
-    document.querySelector('.cap').classList.remove('none');
-    console.log(ans);
+    if (document.querySelectorAll('.question').length === ans.length) {
+        clearInterval(timer);
+        document.getElementById('timer').innerHTML = "completed"
+        document.body.removeChild(document.getElementById('root'));
+        document.querySelector('.cap').classList.remove('none');
+        document.querySelector('.controls').style.opacity = '0';
+        localStorage.setItem('time','Completed')
+        console.log(ans);
+    }else{
+        alert('Complete test');
+    }
 })
